@@ -346,8 +346,6 @@ ExternalProject_Add( raja
                      DEPENDS ${RAJA_DEPENDS}
                      BUILD_COMMAND ${TPL_BUILD_COMMAND}
                      INSTALL_COMMAND ${TPL_INSTALL_COMMAND}
-                     PATCH_COMMAND patch -p1 < ${TPL_MIRROR_DIR}/raja-stdexcept.patch
-                           COMMAND patch -p1 < ${TPL_MIRROR_DIR}/raja-cstdlib.patch
                      CMAKE_GENERATOR ${TPL_GENERATOR}
                      CMAKE_ARGS -D CMAKE_C_COMPILER=${CMAKE_C_COMPILER}
                                 -D CMAKE_CXX_COMPILER:PATH=${CMAKE_CXX_COMPILER}
@@ -384,9 +382,6 @@ ExternalProject_Add( chai
                      DEPENDS raja
                      BUILD_COMMAND ${TPL_BUILD_COMMAND}
                      INSTALL_COMMAND ${TPL_INSTALL_COMMAND}
-                     PATCH_COMMAND patch
-                        src/tpl/umpire/src/tpl/umpire/camp/include/camp/resource.hpp
-                        < ${TPL_MIRROR_DIR}/chai-stdexcept.patch
                      CMAKE_GENERATOR ${TPL_GENERATOR}
                      CMAKE_ARGS -D CMAKE_C_COMPILER=${CMAKE_C_COMPILER}
                                 -D CMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
@@ -466,7 +461,6 @@ if (ENABLE_CALIPER)
                          INSTALL_DIR ${CALIPER_DIR}
                          BUILD_COMMAND ${TPL_BUILD_COMMAND}
                          INSTALL_COMMAND ${TPL_INSTALL_COMMAND}
-                         PATCH_COMMAND patch src/mpi/mpi_machine.cpp < ${TPL_MIRROR_DIR}/caliper-uint.patch
                          CMAKE_GENERATOR ${TPL_GENERATOR}
                          DEPENDS adiak
                          CMAKE_ARGS -D CMAKE_C_COMPILER:STRING=${CMAKE_C_COMPILER}
@@ -1224,7 +1218,7 @@ if (ENABLE_CATALYST)
                                  )
 
   set(CATALYST_DIR "${CMAKE_INSTALL_PREFIX}/catalyst")
-  set(CATALYST_URL "${TPL_MIRROR_DIR}/catalyst-74275110.tar.gz")
+  set(CATALYST_URL "${TPL_MIRROR_DIR}/catalyst-afa7ec79.tar.gz")
 
     ExternalProject_Add( catalyst
                      URL ${CATALYST_URL}
@@ -1242,7 +1236,7 @@ if (ENABLE_CATALYST)
  
 
   set(CATALYST_IMPLEMENTATION_DIR "${CMAKE_INSTALL_PREFIX}/catalyst_implementation")
-  set(CATALYST_IMPLEMENTATION_URL "${TPL_MIRROR_DIR}/adioscatalyst-db414c63.tar.gz")
+  set(CATALYST_IMPLEMENTATION_URL "${TPL_MIRROR_DIR}/adioscatalyst-72a75a88.tar.gz")
 
   set(ADIOS_CMAKE_PREFIX ${ADIOS_DIR}/${CMAKE_INSTALL_LIBDIR}/cmake/adios2/)
 
