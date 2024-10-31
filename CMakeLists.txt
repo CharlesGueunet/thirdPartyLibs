@@ -1107,7 +1107,7 @@ endif()
 ################################
 if( ENABLE_VTK )
     set( VTK_DIR "${CMAKE_INSTALL_PREFIX}/vtk" )
-    set( VTK_URL "${TPL_MIRROR_DIR}/VTK-9.3.1.tar.gz" )
+    set( VTK_URL "${TPL_MIRROR_DIR}/VTK-9.4.0.rc2.tar.gz" )
 
 
     message( STATUS "Building VTK found at ${VTK_URL}" )
@@ -1144,7 +1144,6 @@ endif( ENABLE_MPI )
                          INSTALL_DIR ${VTK_DIR}
                          BUILD_COMMAND ${TPL_BUILD_COMMAND}
                          INSTALL_COMMAND "${TPL_INSTALL_COMMAND}"
-                         PATCH_COMMAND patch -p1 < ${TPL_MIRROR_DIR}/VTK-ABI.patch
                          CMAKE_GENERATOR ${TPL_GENERATOR}
                          CMAKE_ARGS -D CMAKE_C_COMPILER=${VTK_C_COMPILER}
                                     -D CMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
