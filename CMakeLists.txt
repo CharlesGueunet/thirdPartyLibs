@@ -1230,6 +1230,7 @@ if (ENABLE_CATALYST)
                                 -DCMAKE_CXX_COMPILER=${MPI_CXX_COMPILER}
                                 -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
                                 -DCMAKE_CXX_STANDARD=11
+                                -DCATALYST_WRAP_PYTHON=ON
                                 -DNoGitVersionString:BOOL=ON
                                  )
  
