@@ -1217,7 +1217,7 @@ if (ENABLE_CATALYST)
                                  )
 
   set(CATALYST_DIR "${CMAKE_INSTALL_PREFIX}/catalyst")
-  set(CATALYST_URL "${TPL_MIRROR_DIR}/catalyst-afa7ec79.tar.gz")
+  set(CATALYST_URL "${TPL_MIRROR_DIR}/catalyst-v2.0.0.tar.gz")
 
     ExternalProject_Add( catalyst
                      URL ${CATALYST_URL}
